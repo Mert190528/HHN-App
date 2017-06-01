@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		536A8A531EE01CD30006CEE3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536A8A521EE01CD30006CEE3 /* MenuViewController.swift */; };
+		536A8A551EE01D0B0006CEE3 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536A8A541EE01D0B0006CEE3 /* MenuTableViewCell.swift */; };
 		ACF66CFF1EE0013E00DFD439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF66CFE1EE0013E00DFD439 /* AppDelegate.swift */; };
 		ACF66D011EE0013E00DFD439 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF66D001EE0013E00DFD439 /* ViewController.swift */; };
 		ACF66D041EE0013E00DFD439 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACF66D021EE0013E00DFD439 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		536A8A521EE01CD30006CEE3 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		536A8A541EE01D0B0006CEE3 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		ACF66CFB1EE0013E00DFD439 /* HHN-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HHN-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF66CFE1EE0013E00DFD439 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACF66D001EE0013E00DFD439 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 				ACF66CFE1EE0013E00DFD439 /* AppDelegate.swift */,
 				ACF66D001EE0013E00DFD439 /* ViewController.swift */,
 				ACF66D021EE0013E00DFD439 /* Main.storyboard */,
+				536A8A541EE01D0B0006CEE3 /* MenuTableViewCell.swift */,
+				536A8A521EE01CD30006CEE3 /* MenuViewController.swift */,
 				ACF66D051EE0013E00DFD439 /* Assets.xcassets */,
 				ACF66D071EE0013E00DFD439 /* LaunchScreen.storyboard */,
 				ACF66D0A1EE0013E00DFD439 /* Info.plist */,
@@ -260,6 +266,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACF66D011EE0013E00DFD439 /* ViewController.swift in Sources */,
+				536A8A531EE01CD30006CEE3 /* MenuViewController.swift in Sources */,
+				536A8A551EE01D0B0006CEE3 /* MenuTableViewCell.swift in Sources */,
 				ACF66CFF1EE0013E00DFD439 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +515,7 @@
 				ACF66D251EE0013E00DFD439 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ACF66D261EE0013E00DFD439 /* Build configuration list for PBXNativeTarget "HHN-AppTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +524,7 @@
 				ACF66D281EE0013E00DFD439 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ACF66D291EE0013E00DFD439 /* Build configuration list for PBXNativeTarget "HHN-AppUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +533,7 @@
 				ACF66D2B1EE0013E00DFD439 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
