@@ -87,10 +87,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Akg-Ea-uLR" firstAttribute="top" secondItem="xG4-vN-GfD" secondAttribute="bottom" id="Dak-Af-Zdb"/>
-                            <constraint firstItem="xG4-vN-GfD" firstAttribute="top" secondItem="tPL-eQ-hNW" secondAttribute="bottom" id="X3W-p7-1TF"/>
-                            <constraint firstItem="xG4-vN-GfD" firstAttribute="leading" secondItem="dYT-hL-OCs" secondAttribute="leading" constant="116" id="p0S-hY-Dc9"/>
-                            <constraint firstAttribute="trailing" secondItem="xG4-vN-GfD" secondAttribute="trailing" id="xAQ-ai-xbw"/>
+                            <constraint firstAttribute="trailing" secondItem="xG4-vN-GfD" secondAttribute="trailing" id="589-FI-0mW"/>
+                            <constraint firstItem="xG4-vN-GfD" firstAttribute="leading" secondItem="dYT-hL-OCs" secondAttribute="leading" constant="173" id="Q0J-AV-Pde"/>
+                            <constraint firstItem="Akg-Ea-uLR" firstAttribute="top" secondItem="xG4-vN-GfD" secondAttribute="bottom" id="Sz2-hu-2uG"/>
+                            <constraint firstItem="xG4-vN-GfD" firstAttribute="top" secondItem="tPL-eQ-hNW" secondAttribute="bottom" id="cD5-UA-xy7"/>
                         </constraints>
                     </view>
                     <connections>
