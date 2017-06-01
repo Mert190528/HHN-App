@@ -27,6 +27,22 @@ class ViewController: UIViewController {
         self.view.addGestureRecognizer(swipeRight)
     }
 
+    func respondToGesture(gesture : UISwipeGestureRecognizer)
+    {
+        switch gesture.direction {
+        case UISwipeGestureRecognizerDirection.left:
+            print("Left Swipe")
+            // show Menu
+            show_menu()
+            
+        case UISwipeGestureRecognizerDirection.right:
+            print("Right Swipe")
+            close_on_swipe()
+        default:
+            break
+        }
+    
+    }
     
     @IBAction func menu_action(_ sender: UIBarButtonItem) {
         
@@ -45,6 +61,19 @@ class ViewController: UIViewController {
         
     }
     
+    func close_on_swipe()
+    {
+        if AppDelegate.menu_bool{
+            
+            //show menu
+            //show_menu()
+            
+        }else{
+            
+            //close menu
+            close_menu()
+        }
+    }
     
     func show_menu()
     {
