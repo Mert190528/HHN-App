@@ -199,6 +199,7 @@
 				TargetAttributes = {
 					ACF66CFA1EE0013E00DFD439 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = J7PR7ABBQE;
 						ProvisioningStyle = Automatic;
 					};
 					ACF66D0E1EE0013E00DFD439 = {
@@ -422,6 +423,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = J7PR7ABBQE;
 				INFOPLIST_FILE = "HHN-App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "hhnapp.HHN-App";
@@ -434,6 +436,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = J7PR7ABBQE;
 				INFOPLIST_FILE = "HHN-App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "hhnapp.HHN-App";

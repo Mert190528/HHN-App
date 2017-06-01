@@ -10,7 +10,7 @@ import UIKit
 
 class MenuViewController: UIViewController  , UITableViewDelegate , UITableViewDataSource{
 
-    let title_arr = ["Home" , "About us" , "Rate us", "share", "Logout"]
+    let title_arr = ["Standorte" , "Routenberechnung" , "Projektbeschreibung", "Impressum"]
     
     @IBOutlet weak var menu_tableView: UITableView!
     override func viewDidLoad() {
