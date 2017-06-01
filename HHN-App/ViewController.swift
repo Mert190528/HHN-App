@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         self.menu_vc.view.backgroundColor =  UIColor.black.withAlphaComponent(0.6)
         self.addChildViewController(menu_vc)
         self.view.addSubview(menu_vc.view)
-        
+        AppDelegate.menu_bool = false
         
     }
     
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
     {
     
         self.menu_vc.view.removeFromSuperview()
-        
+        AppDelegate.menu_bool = true
         
     }
     
