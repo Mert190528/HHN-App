@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		536A8A531EE01CD30006CEE3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536A8A521EE01CD30006CEE3 /* MenuViewController.swift */; };
 		536A8A551EE01D0B0006CEE3 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536A8A541EE01D0B0006CEE3 /* MenuTableViewCell.swift */; };
+		ACF5488D1EE42349009858FC /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = ACF5488C1EE42349009858FC /* Podfile */; };
 		ACF66CFF1EE0013E00DFD439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF66CFE1EE0013E00DFD439 /* AppDelegate.swift */; };
 		ACF66D011EE0013E00DFD439 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF66D001EE0013E00DFD439 /* ViewController.swift */; };
 		ACF66D041EE0013E00DFD439 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACF66D021EE0013E00DFD439 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 		ACF66D091EE0013E00DFD439 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACF66D071EE0013E00DFD439 /* LaunchScreen.storyboard */; };
 		ACF66D141EE0013E00DFD439 /* HHN_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF66D131EE0013E00DFD439 /* HHN_AppTests.swift */; };
 		ACF66D1F1EE0013E00DFD439 /* HHN_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF66D1E1EE0013E00DFD439 /* HHN_AppUITests.swift */; };
+		C5118ED29D359FE447D0D476 /* libPods-HHN-App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D896410B2A1E2C4A53F5FF06 /* libPods-HHN-App.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0980033E400D2C15DA37C79E /* Pods-HHN-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHN-App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HHN-App/Pods-HHN-App.debug.xcconfig"; sourceTree = "<group>"; };
 		536A8A521EE01CD30006CEE3 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		536A8A541EE01D0B0006CEE3 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		ACF5488C1EE42349009858FC /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		ACF66CFB1EE0013E00DFD439 /* HHN-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HHN-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF66CFE1EE0013E00DFD439 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACF66D001EE0013E00DFD439 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +55,8 @@
 		ACF66D1A1EE0013E00DFD439 /* HHN-AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HHN-AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF66D1E1EE0013E00DFD439 /* HHN_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHN_AppUITests.swift; sourceTree = "<group>"; };
 		ACF66D201EE0013E00DFD439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D896410B2A1E2C4A53F5FF06 /* libPods-HHN-App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HHN-App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3A6F5CA746895DFE66CB5E3 /* Pods-HHN-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHN-App.release.xcconfig"; path = "Pods/Target Support Files/Pods-HHN-App/Pods-HHN-App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5118ED29D359FE447D0D476 /* libPods-HHN-App.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,13 +85,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BD685ACEDF7E04307471136 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0980033E400D2C15DA37C79E /* Pods-HHN-App.debug.xcconfig */,
+				E3A6F5CA746895DFE66CB5E3 /* Pods-HHN-App.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		ACF66CF21EE0013E00DFD439 = {
 			isa = PBXGroup;
 			children = (
+				ACF5488C1EE42349009858FC /* Podfile */,
 				ACF66CFD1EE0013E00DFD439 /* HHN-App */,
 				ACF66D121EE0013E00DFD439 /* HHN-AppTests */,
 				ACF66D1D1EE0013E00DFD439 /* HHN-AppUITests */,
 				ACF66CFC1EE0013E00DFD439 /* Products */,
+				1BD685ACEDF7E04307471136 /* Pods */,
+				C16B175CBE5D42CB2125E669 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +150,14 @@
 			path = "HHN-AppUITests";
 			sourceTree = "<group>";
 		};
+		C16B175CBE5D42CB2125E669 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D896410B2A1E2C4A53F5FF06 /* libPods-HHN-App.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +165,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACF66D231EE0013E00DFD439 /* Build configuration list for PBXNativeTarget "HHN-App" */;
 			buildPhases = (
+				D768FD5649BDE9839D9A471B /* [CP] Check Pods Manifest.lock */,
 				ACF66CF71EE0013E00DFD439 /* Sources */,
 				ACF66CF81EE0013E00DFD439 /* Frameworks */,
 				ACF66CF91EE0013E00DFD439 /* Resources */,
+				A03F872FC9344BBE9337813B /* [CP] Embed Pods Frameworks */,
+				33261022764D04640871D8E2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -241,6 +271,7 @@
 			files = (
 				ACF66D091EE0013E00DFD439 /* LaunchScreen.storyboard in Resources */,
 				ACF66D061EE0013E00DFD439 /* Assets.xcassets in Resources */,
+				ACF5488D1EE42349009858FC /* Podfile in Resources */,
 				ACF66D041EE0013E00DFD439 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +291,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		33261022764D04640871D8E2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HHN-App/Pods-HHN-App-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A03F872FC9344BBE9337813B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HHN-App/Pods-HHN-App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D768FD5649BDE9839D9A471B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ACF66CF71EE0013E00DFD439 /* Sources */ = {
@@ -421,6 +500,7 @@
 		};
 		ACF66D241EE0013E00DFD439 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0980033E400D2C15DA37C79E /* Pods-HHN-App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = J7PR7ABBQE;
@@ -434,6 +514,7 @@
 		};
 		ACF66D251EE0013E00DFD439 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3A6F5CA746895DFE66CB5E3 /* Pods-HHN-App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = J7PR7ABBQE;

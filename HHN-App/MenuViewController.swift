@@ -37,4 +37,5 @@ class MenuViewController: UIViewController  , UITableViewDelegate , UITableViewD
         cell.lable_titel.text = title_arr[indexPath.row]
         return cell
     }
+    
 }

@@ -7,15 +7,41 @@
 //
 
 import UIKit
+import GoogleMaps
+import GooglePlaces
+import GooglePlacePicker
 
-class ViewController: UIViewController {
+class ViewController: UIViewController{
+    
+    
 
+        
+            
     var menu_vc : MenuViewController!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        GMSServices.provideAPIKey("AIzaSyB7hXn-2OEafqEiwX3D4JEYafsz1sF3PLc")
+        GMSPlacesClient.provideAPIKey("AIzaSyB7hXn-2OEafqEiwX3D4JEYafsz1sF3PLc")
+        let config = GMSPlacePickerConfig(viewport: nil)
+        let placePicker = GMSPlacePicker(config: config)
         
-        menu_vc = self.storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+        placePicker.pickPlace(callback: { (place, error) -> Void in
+            if let error = error {
+                print("Pick Place error: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let place = place else {
+                print("No place selected")
+                return
+            }
+            
+            print("Place name \(place.name)")
+            print("Place address \(place.formattedAddress)")
+            print("Place attributions \(place.attributions)")
+        })
+        
+       menu_vc = self.storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
         
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToGesture))
         swipeLeft.direction = UISwipeGestureRecognizerDirection.left
