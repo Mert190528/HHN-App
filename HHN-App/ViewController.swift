@@ -7,41 +7,28 @@
 //
 
 import UIKit
-import GoogleMaps
-import GooglePlaces
+
 import GooglePlacePicker
 
-class ViewController: UIViewController{
+class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelegate {
     
+    @IBOutlet weak var mapView: GMSMapView!
+    var locationManager = CLLocationManager()
     
-
-        
-            
     var menu_vc : MenuViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        GMSServices.provideAPIKey("AIzaSyB7hXn-2OEafqEiwX3D4JEYafsz1sF3PLc")
-        GMSPlacesClient.provideAPIKey("AIzaSyB7hXn-2OEafqEiwX3D4JEYafsz1sF3PLc")
-        let config = GMSPlacePickerConfig(viewport: nil)
-        let placePicker = GMSPlacePicker(config: config)
         
-        placePicker.pickPlace(callback: { (place, error) -> Void in
-            if let error = error {
-                print("Pick Place error: \(error.localizedDescription)")
-                return
-            }
-            
-            guard let place = place else {
-                print("No place selected")
-                return
-            }
-            
-            print("Place name \(place.name)")
-            print("Place address \(place.formattedAddress)")
-            print("Place attributions \(place.attributions)")
-        })
         
-       menu_vc = self.storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+        mapView.isMyLocationEnabled = true
+        mapView.delegate = self
+        
+        //Location Manager code to fetch current location
+        self.locationManager.delegate = self
+        self.locationManager.startUpdatingLocation()
+        
+        menu_vc = self.storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
         
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToGesture))
         swipeLeft.direction = UISwipeGestureRecognizerDirection.left
@@ -52,7 +39,22 @@ class ViewController: UIViewController{
         self.view.addGestureRecognizer(swipeLeft)
         self.view.addGestureRecognizer(swipeRight)
     }
-
+    
+    //Location Manager delegates
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let location = locations.last
+        print(location)
+        
+        let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude:(location?.coordinate.longitude)!, zoom:14)
+        
+        mapView.animate(to: camera)
+        
+       //Finally stop updating location otherwise it will come again and again in this delegate
+        self.locationManager.stopUpdatingLocation()
+        
+    }
+    
     func respondToGesture(gesture : UISwipeGestureRecognizer)
     {
         switch gesture.direction {
@@ -67,7 +69,7 @@ class ViewController: UIViewController{
         default:
             break
         }
-    
+        
     }
     
     @IBAction func menu_action(_ sender: UIBarButtonItem) {
@@ -75,13 +77,13 @@ class ViewController: UIViewController{
         
         if AppDelegate.menu_bool{
             
-        //show menu
-        show_menu()
-        
+            //show menu
+            show_menu()
+            
         }else{
             
-        //close menu
-        close_menu()
+            //close menu
+            close_menu()
         }
         
         
@@ -105,12 +107,12 @@ class ViewController: UIViewController{
     {
         UIView.animate(withDuration: 0.3){ ()->Void in
             
-        self.menu_vc.view.frame = CGRect(x: 0, y: 60, width: UIScreen.main.bounds.size.width , height: UIScreen.main.bounds.size.height)
-        self.menu_vc.view.backgroundColor =  UIColor.black.withAlphaComponent(0.6)
-        self.addChildViewController(self.menu_vc)
-        self.view.addSubview(self.menu_vc.view)
-        AppDelegate.menu_bool = false
-        
+            self.menu_vc.view.frame = CGRect(x: 0, y: 60, width: UIScreen.main.bounds.size.width , height: UIScreen.main.bounds.size.height)
+            self.menu_vc.view.backgroundColor =  UIColor.black.withAlphaComponent(0.6)
+            self.addChildViewController(self.menu_vc)
+            self.view.addSubview(self.menu_vc.view)
+            AppDelegate.menu_bool = false
+            
         }
         
         
@@ -119,7 +121,7 @@ class ViewController: UIViewController{
     
     func close_menu()
     {
-    
+        
         UIView.animate(withDuration: 0.3, animations:{ ()->Void in
             self.menu_vc.view.frame = CGRect(x: +UIScreen.main.bounds.size.width, y: 60, width: UIScreen.main.bounds.size.width , height: UIScreen.main.bounds.size.height)
         }){ (finished) in
@@ -127,7 +129,7 @@ class ViewController: UIViewController{
         }
         AppDelegate.menu_bool = true
         
-            
+        
     }
     
     
