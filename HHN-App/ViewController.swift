@@ -8,17 +8,29 @@
 
 import UIKit
 import GoogleMaps
-
+import DropDown
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var mapView: GMSMapView!
-    @IBAction func openNavigation(_ sender: Any) {
+    @IBAction func test(_ sender: Any) {
+        dropDown.show()
     }
     
+    @IBOutlet weak var dropDownList: UIButton!
+    
+    @IBOutlet weak var mapView: GMSMapView!
+    @IBAction func openNavigation(_ sender: Any) {
+        print(selectedIndex)
+    }
+    
+    
+    let dropDown = DropDown()
     var locationManager = CLLocationManager()
     var currentLocation: CLLocation?
     var zoomLevel: Float = 15.0
+    
+    var selectedIndex = -1
+    
     // A default location to use when location permission is not granted.
     let defaultLocation = CLLocation(latitude: -33.869405, longitude: 151.199)
     
@@ -55,6 +67,19 @@ class ViewController: UIViewController {
         
         self.view.addGestureRecognizer(swipeLeft)
         self.view.addGestureRecognizer(swipeRight)
+        
+        
+        
+        // The view to which the drop down will appear on
+        dropDown.anchorView = dropDownList // UIView or UIBarButtonItem
+        
+        // The list of items to display. Can be changed dynamically
+        dropDown.dataSource = ["Campus Heilbronn: Am Europaplatz", "Campus Sontheim", "Campus Schwäbisch Hall", "Campus Künzelsau"]
+        
+        dropDown.selectionAction = { [unowned self] (index, item) in
+            self.dropDownList.setTitle(item, for: .normal)
+            self.selectedIndex = index
+        }
     }
     
     

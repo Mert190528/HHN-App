@@ -27,12 +27,20 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PyA-fh-TQa">
-                                <rect key="frame" x="164" y="589" width="46" height="30"/>
+                                <rect key="frame" x="313" y="587" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="openNavigation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z3s-PA-Ojj"/>
                                     <segue destination="nRC-pc-P2L" kind="show" id="hpt-3d-oxb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1b0-Ey-1Wf">
+                                <rect key="frame" x="16" y="587" width="289" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Standorte der HHN"/>
+                                <connections>
+                                    <action selector="test:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gi4-rh-rmh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -47,6 +55,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="dropDownList" destination="1b0-Ey-1Wf" id="yyf-kr-LEo"/>
                         <outlet property="mapView" destination="qAD-ur-qTS" id="TeI-1A-gZh"/>
                     </connections>
                 </viewController>

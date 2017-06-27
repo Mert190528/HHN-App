@@ -18,7 +18,7 @@
 		ACF66D091EE0013E00DFD439 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACF66D071EE0013E00DFD439 /* LaunchScreen.storyboard */; };
 		ACF66D141EE0013E00DFD439 /* HHN_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF66D131EE0013E00DFD439 /* HHN_AppTests.swift */; };
 		ACF66D1F1EE0013E00DFD439 /* HHN_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF66D1E1EE0013E00DFD439 /* HHN_AppUITests.swift */; };
-		C5118ED29D359FE447D0D476 /* libPods-HHN-App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D896410B2A1E2C4A53F5FF06 /* libPods-HHN-App.a */; };
+		CF5127EE47FFE451630A53A3 /* Pods_HHN_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C008155C0C9E5616160AAC75 /* Pods_HHN_App.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +57,7 @@
 		ACF66D1A1EE0013E00DFD439 /* HHN-AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HHN-AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF66D1E1EE0013E00DFD439 /* HHN_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHN_AppUITests.swift; sourceTree = "<group>"; };
 		ACF66D201EE0013E00DFD439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D896410B2A1E2C4A53F5FF06 /* libPods-HHN-App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HHN-App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C008155C0C9E5616160AAC75 /* Pods_HHN_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HHN_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3A6F5CA746895DFE66CB5E3 /* Pods-HHN-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHN-App.release.xcconfig"; path = "Pods/Target Support Files/Pods-HHN-App/Pods-HHN-App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5118ED29D359FE447D0D476 /* libPods-HHN-App.a in Frameworks */,
+				CF5127EE47FFE451630A53A3 /* Pods_HHN_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,7 +156,7 @@
 		C16B175CBE5D42CB2125E669 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D896410B2A1E2C4A53F5FF06 /* libPods-HHN-App.a */,
+				C008155C0C9E5616160AAC75 /* Pods_HHN_App.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
