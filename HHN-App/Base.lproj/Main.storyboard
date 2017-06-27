@@ -27,9 +27,13 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PyA-fh-TQa">
-                                <rect key="frame" x="145" y="584" width="46" height="30"/>
+                                <rect key="frame" x="164" y="589" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="openNavigation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z3s-PA-Ojj"/>
+                                    <segue destination="nRC-pc-P2L" kind="show" id="hpt-3d-oxb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -115,6 +119,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pd1-oJ-oGK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2021.5999999999999" y="-72.413793103448285"/>
+        </scene>
+        <!--Navigation View Controller-->
+        <scene sceneID="Y78-MJ-Ler">
+            <objects>
+                <viewController id="nRC-pc-P2L" customClass="NavigationViewController" customModule="HHN_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jET-SA-hb9"/>
+                        <viewControllerLayoutGuide type="bottom" id="vUs-C4-HB8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f8Y-GB-a4c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bHS-rt-IZ5" customClass="GMSMapView">
+                                <rect key="frame" x="16" y="72" width="343" height="292"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="bHS-rt-IZ5" id="Cg0-RS-kT7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kMn-VE-xsL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-775.20000000000005" y="-336.88155922038982"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OSt-ZE-eex">

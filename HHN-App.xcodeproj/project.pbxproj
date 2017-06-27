@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		536A8A531EE01CD30006CEE3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536A8A521EE01CD30006CEE3 /* MenuViewController.swift */; };
 		536A8A551EE01D0B0006CEE3 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536A8A541EE01D0B0006CEE3 /* MenuTableViewCell.swift */; };
+		ACAAB2221F02E2880041741A /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAAB2211F02E2880041741A /* NavigationViewController.swift */; };
 		ACF5488D1EE42349009858FC /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = ACF5488C1EE42349009858FC /* Podfile */; };
 		ACF66CFF1EE0013E00DFD439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF66CFE1EE0013E00DFD439 /* AppDelegate.swift */; };
 		ACF66D011EE0013E00DFD439 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF66D001EE0013E00DFD439 /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 		0980033E400D2C15DA37C79E /* Pods-HHN-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHN-App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HHN-App/Pods-HHN-App.debug.xcconfig"; sourceTree = "<group>"; };
 		536A8A521EE01CD30006CEE3 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		536A8A541EE01D0B0006CEE3 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		ACAAB2211F02E2880041741A /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		ACF5488C1EE42349009858FC /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		ACF66CFB1EE0013E00DFD439 /* HHN-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HHN-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF66CFE1EE0013E00DFD439 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				ACF66D051EE0013E00DFD439 /* Assets.xcassets */,
 				ACF66D071EE0013E00DFD439 /* LaunchScreen.storyboard */,
 				ACF66D0A1EE0013E00DFD439 /* Info.plist */,
+				ACAAB2211F02E2880041741A /* NavigationViewController.swift */,
 			);
 			path = "HHN-App";
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				ACF66D011EE0013E00DFD439 /* ViewController.swift in Sources */,
 				536A8A531EE01CD30006CEE3 /* MenuViewController.swift in Sources */,
 				536A8A551EE01D0B0006CEE3 /* MenuTableViewCell.swift in Sources */,
+				ACAAB2221F02E2880041741A /* NavigationViewController.swift in Sources */,
 				ACF66CFF1EE0013E00DFD439 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
