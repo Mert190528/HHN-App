@@ -34,8 +34,46 @@ class MenuViewController: UIViewController  , UITableViewDelegate , UITableViewD
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "menu_cell") as! MenuTableViewCell
         
-        cell.lable_titel.text = title_arr[indexPath.row]
+        cell.menuButton.setTitle(title_arr[indexPath.row], for: .normal)
+        cell.menuButton.tag = indexPath.row
+        if indexPath.row == 0 {
+            cell.menuButton.addTarget(self, action: #selector(MenuViewController.segueAction0(_:)), for: .touchUpInside)
+        } else {
+            cell.menuButton.addTarget(self, action: #selector(MenuViewController.segueAction1(_:)), for: .touchUpInside)
+        }
+
+
         return cell
     }
     
+    func segueAction0(_ sender:UIButton!) {
+        closeMenu()
+        self.performSegue(withIdentifier: "moveToView0", sender: sender)
+    }
+    
+    func segueAction1(_ sender:UIButton!) {
+        closeMenu()
+    }
+    
+    func closeMenu() {
+        UIView.animate(withDuration: 0.3, animations:{ ()->Void in
+            self.view.frame = CGRect(x: +UIScreen.main.bounds.size.width, y: 60, width: UIScreen.main.bounds.size.width , height: UIScreen.main.bounds.size.height)
+        }){ (finished) in
+            self.view.removeFromSuperview()
+        }
+        AppDelegate.menu_bool = true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if(segue.identifier == "moveToView") {
+//            if let destination = segue.destination as? ViewController {
+//                if let button:UIButton = sender as! UIButton? {
+//                    print(button.tag) //optional
+//                    if button.tag == 0 {
+//                    }
+//                }
+//                }
+//            
+//        }
+    }
 }

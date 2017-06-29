@@ -89,22 +89,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="223" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syT-Pg-0jf">
-                                                    <rect key="frame" x="16" y="-1" width="227" height="37"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ug-W4-AVI">
+                                                    <rect key="frame" x="8" y="7" width="207" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="syT-Pg-0jf" secondAttribute="trailing" constant="24" id="OYE-Rm-tHe"/>
-                                                <constraint firstAttribute="bottom" secondItem="syT-Pg-0jf" secondAttribute="bottom" constant="-0.5" id="UuF-7k-v56"/>
-                                                <constraint firstItem="syT-Pg-0jf" firstAttribute="leading" secondItem="HyG-wN-1rX" secondAttribute="leading" constant="8" id="ihT-a2-1PH"/>
-                                                <constraint firstItem="syT-Pg-0jf" firstAttribute="top" secondItem="HyG-wN-1rX" secondAttribute="top" id="oY4-8G-wlb"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="lable_titel" destination="syT-Pg-0jf" id="J64-Go-dY8"/>
+                                            <outlet property="menuButton" destination="5ug-W4-AVI" id="ac2-E9-CTg"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -123,11 +116,41 @@
                     </view>
                     <connections>
                         <outlet property="menu_tableView" destination="xG4-vN-GfD" id="nNl-9a-LVb"/>
+                        <segue destination="vNG-DQ-bE0" kind="show" identifier="moveToView0" id="fkg-Eu-agu"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="moveToView1" id="p1f-SU-yis"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pd1-oJ-oGK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2021.5999999999999" y="-72.413793103448285"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="ceS-2y-ARZ">
+            <objects>
+                <tableViewController id="vNG-DQ-bE0" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="olN-23-rDG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="WpJ-OZ-zLC">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WpJ-OZ-zLC" id="FDo-Ny-Hhg">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vNG-DQ-bE0" id="Qda-5Y-1Hm"/>
+                            <outlet property="delegate" destination="vNG-DQ-bE0" id="3g8-4w-OXY"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4OL-Pg-IFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1884" y="727"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="Y78-MJ-Ler">
@@ -195,4 +218,7 @@
     <resources>
         <image name="1496332788_menu-alt" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="p1f-SU-yis"/>
+    </inferredMetricsTieBreakers>
 </document>

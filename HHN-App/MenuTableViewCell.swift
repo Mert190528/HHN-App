@@ -10,8 +10,8 @@ import UIKit
 
 class MenuTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var lable_titel: UILabel!
-    override func awakeFromNib() {
+    @IBOutlet weak var menuButton: UIButton!
+     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
@@ -21,5 +21,6 @@ class MenuTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
 
 }
