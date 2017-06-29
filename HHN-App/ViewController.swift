@@ -19,9 +19,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var dropDownList: UIButton!
     
     @IBOutlet weak var mapView: GMSMapView!
-    @IBAction func openNavigation(_ sender: Any) {
-        print(selectedIndex)
-    }
+    
+    @IBOutlet weak var openNavigationButton: UIButton!
     
     
     let dropDown = DropDown()
@@ -74,11 +73,12 @@ class ViewController: UIViewController {
         dropDown.anchorView = dropDownList // UIView or UIBarButtonItem
         
         // The list of items to display. Can be changed dynamically
-        dropDown.dataSource = ["Campus Heilbronn: Am Europaplatz", "Campus Sontheim", "Campus Schwäbisch Hall", "Campus Künzelsau"]
+        dropDown.dataSource = ["Campus Heilbronn: Am Europaplatz", "Campus Heilbronn: Sontheim", "Campus Schwäbisch Hall", "Campus Künzelsau"]
         
         dropDown.selectionAction = { [unowned self] (index, item) in
             self.dropDownList.setTitle(item, for: .normal)
             self.selectedIndex = index
+            self.openNavigationButton.isEnabled = true
         }
     }
     
@@ -153,6 +153,16 @@ class ViewController: UIViewController {
         
     }
     
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as? NavigationViewController
+        
+        destination?.currentLocation = currentLocation
+        destination?.targetIndex = selectedIndex
+
+    }
     
 }
 
@@ -169,6 +179,7 @@ extension ViewController: CLLocationManagerDelegate {
                                               zoom: zoomLevel)
         
         mapView.animate(to: camera)
+        currentLocation = location
     }
     
     // Handle authorization for the location manager.

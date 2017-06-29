@@ -8,50 +8,128 @@
 
 import UIKit
 import GoogleMaps
+import Alamofire
 
 class NavigationViewController: UIViewController {
     
     @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var durationLabel: UILabel!
     
-    var locationManager = CLLocationManager()
     var currentLocation: CLLocation?
-    var zoomLevel: Float = 15.0
-    // A default location to use when location permission is not granted.
-    let defaultLocation = CLLocation(latitude: -33.869405, longitude: 151.199)
+    var targetIndex: Int?
     
-    var menu_vc : MenuViewController!
+    let targets = [
+        CLLocation(latitude:49.148288,longitude:9.216576),
+        CLLocation(latitude:49.123248,longitude:9.210911),
+        CLLocation(latitude:49.112915,longitude:9.745572),
+        CLLocation(latitude:49.275650,longitude:9.712207)
+    ]
+    
+    let targetNames = [
+        "Campus Heilbronn: Am Europaplatz",
+        "Campus Heilbronn: Sontheim",
+        "Campus Schwäbisch Hall",
+        "Campus Künzelsau"
+    ]
+    
+    let defaultLocation = CLLocation(latitude:49.142552,longitude:9.218364)
+    let zoomLevel: Float = 15.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Initialize the location manager.
-        locationManager = CLLocationManager()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestAlwaysAuthorization()
-        locationManager.distanceFilter = 50
-        locationManager.startUpdatingLocation()
-        locationManager.delegate = self
+        
+        let location:CLLocation = currentLocation ?? defaultLocation
         
         // Create a map.
-        let camera = GMSCameraPosition.camera(withLatitude: defaultLocation.coordinate.latitude,
-                                              longitude: defaultLocation.coordinate.longitude,
+        let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
+                                              longitude: location.coordinate.longitude,
                                               zoom: zoomLevel)
         
-        self.mapView.camera=camera
-        self.mapView.settings.myLocationButton = true
-        self.mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.mapView.isMyLocationEnabled = true
+        mapView.camera=camera
+        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        mapView.animate(to: camera)
         
-        menu_vc = self.storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+        let startMarker = GMSMarker(position: location.coordinate)
+        startMarker.title = "Start"
+        startMarker.map = mapView
         
-//        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToGesture))
-//        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
-//        
-//        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToGesture))
-//        swipeRight.direction = UISwipeGestureRecognizerDirection.right
-//        
-//        self.view.addGestureRecognizer(swipeLeft)
-//        self.view.addGestureRecognizer(swipeRight)
-        // Do any additional setup after loading the view.
+        guard let index = targetIndex
+            else {
+                self.distanceLabel.text = "Entfernung nicht verfügbar"
+                self.durationLabel.text = "Dauer nicht verfügbar"
+                return
+        }
+        if index < 0 {
+            self.distanceLabel.text = "Entfernung nicht verfügbar"
+            self.durationLabel.text = "Dauer nicht verfügbar"
+            return
+        }
+        let target = targets[index]
+        
+        let targetMarker = GMSMarker(position: target.coordinate)
+        targetMarker.title = targetNames[index]
+        targetMarker.map = mapView
+        
+        let directionURL = "https://maps.googleapis.com/maps/api/directions/json?origin=\(location.coordinate.latitude),\(location.coordinate.longitude)&destination=\(target.coordinate.latitude),\(target.coordinate.longitude)&key=AIzaSyAihBwBjMw0lIZz6BqP6XEBBN0GFLxSU84"
+        
+        print(directionURL)
+        
+        Alamofire.request(directionURL).responseJSON
+            { response in
+                
+                if let JSON = response.result.value {
+                    
+                    let mapResponse: [String: AnyObject] = JSON as! [String : AnyObject]
+                    
+                    let routesArray = (mapResponse["routes"] as? Array) ?? []
+                    
+                    let routes = (routesArray.first as? Dictionary<String, AnyObject>) ?? [:]
+                    
+                    let overviewPolyline = (routes["overview_polyline"] as? Dictionary<String,AnyObject>) ?? [:]
+                    let polypoints = (overviewPolyline["points"] as? String) ?? ""
+                    let line  = polypoints
+                    
+                    let path = GMSMutablePath(fromEncodedPath: line)
+                    let polyline = GMSPolyline(path: path)
+                    polyline.strokeWidth = 5
+                    polyline.strokeColor = .blue
+                    polyline.map = self.mapView
+                    
+                    guard let path2 = path
+                        else {
+                            self.distanceLabel.text = "Entfernung nicht verfügbar"
+                            self.durationLabel.text = "Dauer nicht verfügbar"
+                            return
+                    }
+                    let pathCount = path2.count()
+                    if pathCount < 2 {
+                            self.distanceLabel.text = "Entfernung nicht verfügbar"
+                            self.durationLabel.text = "Dauer nicht verfügbar"
+                            return
+                    }
+                    
+                    
+                    var bounds = GMSCoordinateBounds()
+                    for i in 1...pathCount {
+                        let coordinate = path2.coordinate(at: i)
+                        bounds = bounds.includingCoordinate(coordinate)
+                    }
+                    self.mapView.animate(with: GMSCameraUpdate.fit(bounds))
+                    
+                    let legs:Array = (routes["legs"] as? Array) ?? []
+                    
+                    let distance = ((legs.first as? Dictionary<String, AnyObject>)?["distance"]?["text"] as? String) ?? ""
+                    let duration = ((legs.first as? Dictionary<String, AnyObject>)?["duration"]?["text"] as? String) ?? ""
+                    
+                    print(distance,duration)
+                    
+                    self.distanceLabel.text = "Entfernung: " + distance
+                    self.durationLabel.text = "Dauer: " + duration
+                }
+        }
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -59,58 +137,5 @@ class NavigationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-   
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let vctr = sender as? ViewController else {
-            fatalError("Unexpected sender: \(sender)")
-        }
-        print(vctr.selectedIndex)
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
- 
-    
 }
 
-// Delegates to handle events for the location manager.
-extension NavigationViewController: CLLocationManagerDelegate {
-    
-    // Handle incoming location events.
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location: CLLocation = locations.last!
-        print("Location: \(location)")
-        
-        let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
-                                              longitude: location.coordinate.longitude,
-                                              zoom: zoomLevel)
-        
-        mapView.animate(to: camera)
-    }
-    
-    // Handle authorization for the location manager.
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        switch status {
-        case .restricted:
-            print("Location access was restricted.")
-        case .denied:
-            print("User denied access to location.")
-            // Display the map using the default location.
-            mapView.isHidden = false
-        case .notDetermined:
-            print("Location status not determined.")
-        case .authorizedAlways: fallthrough
-        case .authorizedWhenInUse:
-            print("Location status is OK.")
-        }
-    }
-    
-    // Handle location manager errors.
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        locationManager.stopUpdatingLocation()
-        print("Error: \(error)")
-    }
-}
