@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class MenuViewController: UIViewController  , UITableViewDelegate , UITableViewDataSource{
 
     let title_arr = ["Standorte" , "Routenberechnung"]
-    
+    var currentLocation: CLLocation?
     @IBOutlet weak var menu_tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,5 +76,8 @@ class MenuViewController: UIViewController  , UITableViewDelegate , UITableViewD
 //                }
 //            
 //        }
+        let destination = segue.destination as? LocationListController
+        
+        destination?.currentLocation = currentLocation
     }
 }

@@ -103,6 +103,7 @@ class ViewController: UIViewController {
     @IBAction func menu_action(_ sender: UIBarButtonItem) {
         if AppDelegate.menu_bool{
             //show menu
+            menu_vc.currentLocation = currentLocation
             show_menu()
         }else{
             //close menu
