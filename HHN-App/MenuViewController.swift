@@ -11,7 +11,7 @@ import GoogleMaps
 
 class MenuViewController: UIViewController  , UITableViewDelegate , UITableViewDataSource{
 
-    let title_arr = ["Standorte" , "Routenberechnung"]
+    let title_arr = ["Standorte" , "Navigation"]
     var currentLocation: CLLocation?
     @IBOutlet weak var menu_tableView: UITableView!
     override func viewDidLoad() {
