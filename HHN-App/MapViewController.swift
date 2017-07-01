@@ -29,7 +29,7 @@ class MapViewController: UIViewController {
         "Campus Künzelsau"
     ]
     
-    let zoomLevel: Float = 15.0
+    let zoomLevel: Float = 17.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
