@@ -18,7 +18,7 @@ class MapViewController: UIViewController {
     let targets = [
         CLLocation(latitude:49.148288,longitude:9.216576),
         CLLocation(latitude:49.123248,longitude:9.210911),
-        CLLocation(latitude:49.112915,longitude:9.745572),
+        CLLocation(latitude:49.112543,longitude:9.743715),
         CLLocation(latitude:49.275650,longitude:9.712207)
     ]
 
