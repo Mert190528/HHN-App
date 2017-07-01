@@ -12,10 +12,10 @@ import GoogleMaps
 class LocationListController: UITableViewController {
 
     let targetNames = [
-        "Campus Heilbronn: Am Europaplatz",
-        "Campus Heilbronn: Sontheim",
-        "Campus Schwäbisch Hall",
-        "Campus Künzelsau"
+        "Campus Heilbronn: Am Europaplatz           Weiperstraße 47                                            74076 Heilbronn",
+        "Campus Heilbronn: Sontheim      Max-Planck-Straße 39               74081 Heilbronn",
+        "Campus Schwäbisch Hall                     Ziegeleiweg 4                                                   74523 Schwäbisch Hall",
+        "Campus Künzelsau                           Daimlerstraße 35                                                                          74653 Künzelsau"
     ]
     var currentLocation: CLLocation?
     

@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     var selectedIndex = -1
     
     // A default location to use when location permission is not granted.
-    let defaultLocation = CLLocation(latitude: -33.869405, longitude: 151.199)
+    let defaultLocation = CLLocation(latitude: 49.14282, longitude: 49.14282)
     
     var menu_vc : MenuViewController!
     
