@@ -1,6 +1,14 @@
 //
 //  MapViewController.swift
 //  HHN-App
+//  Gruppe 1 <-
+
+//  Gruppenmitglieder:
+//  1. Mert Sürü (190528)
+//  2. Valmir Muhaheri(190500)
+//  3. Marco Vivod (190539)
+//  4. Mustafa Ünaldi (190532)
+
 //
 //  Created by Mert Sürü on 30.06.17.
 //  Copyright © 2017 Mert Sürü. All rights reserved.
@@ -17,9 +25,11 @@ class MapViewController: UIViewController {
     
     let targets = [
         CLLocation(latitude:49.148288,longitude:9.216576),
-        CLLocation(latitude:49.123248,longitude:9.210911),
-        CLLocation(latitude:49.112543,longitude:9.743715),
-        CLLocation(latitude:49.275650,longitude:9.712207)
+        CLLocation(latitude:49.122585,longitude:9.210871),
+        CLLocation(latitude:49.112494,longitude:9.743597),
+        CLLocation(latitude:49.275566,longitude:9.712153)
+        
+        
     ]
 
     let targetNames = [
@@ -29,7 +39,7 @@ class MapViewController: UIViewController {
         "Campus Künzelsau"
     ]
     
-    let zoomLevel: Float = 17.0
+    let zoomLevel: Float = 15.0
 
     override func viewDidLoad() {
         super.viewDidLoad()

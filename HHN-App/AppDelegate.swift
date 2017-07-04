@@ -1,3 +1,11 @@
+//  Gruppe 1 <-
+
+//  Gruppenmitglieder:
+//  1. Mert Sürü (190528)
+//  2. Valmir Muhaheri(190500)
+//  3. Marco Vivod (190539)
+//  4. Mustafa Ünaldi (190532)
+
 //
 //  AppDelegate.swift
 //  HHN-App

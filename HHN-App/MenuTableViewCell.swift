@@ -1,9 +1,17 @@
-//
+//  Gruppe 1 <-
+
+//  Gruppenmitglieder:
+//  1. Mert Sürü (190528)
+//  2. Valmir Muhaheri(190500)
+//  3. Marco Vivod (190539)
+//  4. Mustafa Ünaldi (190532)
+
+
 //  MenuTableViewCell.swift
 //  HHN-App
 //
-//  Created by Mergim Muhaxheri on 01.06.17.
-//  Copyright © 2017 Mert Sürü. All rights reserved.
+//  Created by Valmir Muhaxheri on 01.06.17.
+//
 //
 
 import UIKit

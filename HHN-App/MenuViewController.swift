@@ -2,9 +2,18 @@
 //  MenuViewController.swift
 //  HHN-App
 //
-//  Created by Mergim Muhaxheri on 01.06.17.
+//  Created by Valmir Muhaxheri on 01.06.17.
 //  Copyright © 2017 Mert Sürü. All rights reserved.
-//
+//  Gruppe 1 <-
+
+//  Gruppenmitglieder:
+//  1. Mert Sürü (190528)
+//  2. Valmir Muhaheri(190500)
+//  3. Marco Vivod (190539)
+//  4. Mustafa Ünaldi (190532)
+//  
+//  Icon von <a href="https://icons8.com/icon/10735/Go-Filled">, für Go.
+
 
 import UIKit
 import GoogleMaps

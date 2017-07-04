@@ -1,3 +1,12 @@
+//  Gruppe 1 <-
+
+//  Gruppenmitglieder:
+//  1. Mert Sürü (190528)
+//  2. Valmir Muhaheri(190500)
+//  3. Marco Vivod (190539)
+//  4. Mustafa Ünaldi (190532)
+
+
 //
 //  NavigationViewController.swift
 //  HHN-App
@@ -34,7 +43,7 @@ class NavigationViewController: UIViewController {
     ]
     
     let defaultLocation = CLLocation(latitude:49.142552,longitude:9.218364)
-    let zoomLevel: Float = 15.0
+    let zoomLevel: Float = 14.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
